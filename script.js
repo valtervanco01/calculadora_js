@@ -26,6 +26,7 @@ let linhaTabela;
 let valorLinha;
 //controlador para realizar os numeros
 let i = 0;
+let nhist;
 
 let comprimento;
 let valorTela;
@@ -76,13 +77,14 @@ botoes.addEventListener('click', function(e){
         }else{
             operacaoSelecionada = botaoClicado;
             tela.value += operacaoSelecionada
+            n2 = ''
             i++
         }
 
     //se o botao clicado for = então...    
     } else if (botaoClicado === '='){
-        if(botaoClicado === '=' && tela.value = calc){
-            tela.value = operacoes(calc,n2, operacaoSelecionada;)
+        if(botaoClicado === '=' && tela.value == calc){
+            tela.value = operacoes(calc,nhist, operacaoSelecionada)
         } else {
             console.log('o primeiro valor é', n1, ';', 'o segundo valor é', n2, ';')
             //realizar a operação
@@ -93,7 +95,7 @@ botoes.addEventListener('click', function(e){
             tela.value = parseFloat(calc).toFixed(1)
             adicionarHistorico()
             n1 = parseFloat(calc).toFixed(1)
-            n2 = ''
+            nhist = n2
             i = 0
         }
 
@@ -127,7 +129,7 @@ botoes.addEventListener('click', function(e){
         if(i == 0){
             n1 += '.'
             tela.value += ','
-        } else if (i == 0 && valorTela[parseInt(comprimento)-1] != operacaoSelecionada) {
+        } else if (i == 1 && valorTela[parseInt(comprimento)-1] != operacaoSelecionada) {
             n2 += '.'
             tela.value += ','
         }
@@ -162,7 +164,7 @@ botoes.addEventListener('click', function(e){
 });
 
 //escutador de eventos quando o usuário clicar em alguma tecla
-tela.addEventListener('keydown', function(e){
+document.addEventListener('keydown', function(e){
     tecla = e.key;
     console.log(tecla)
 
@@ -196,13 +198,14 @@ tela.addEventListener('keydown', function(e){
         }else{
             operacaoSelecionada = tecla;
             tela.value += operacaoSelecionada
+            n2 = ''
             i++
         }
 
     //se a tecla clicada for = então ou enter...    
     } else if (tecla === '=' || tecla === 'Enter'){
-        if(tecla === 'enter' && tela.value = calc){
-            tela.value = operacoes(calc,n2, operacaoSelecionada;)
+        if(tecla === 'enter' && tela.value == calc){
+            tela.value = operacoes(calc,nhist, operacaoSelecionada)
         } else {
             console.log('o primeiro valor é', n1, ';', 'o segundo valor é', n2, ';')
             //realizar a operação
@@ -213,7 +216,7 @@ tela.addEventListener('keydown', function(e){
             tela.value = parseFloat(calc).toFixed(2)
             adicionarHistorico()
             n1 = parseFloat(calc).toFixed(1)
-            n2 = ''
+            nhist = n2
             i = 0
         }
 
@@ -248,7 +251,7 @@ tela.addEventListener('keydown', function(e){
         if(i == 0){
             n1 += '.'
             tela.value += ','
-        } else if (i == 0 && valorTela[parseInt(comprimento)-1] != operacaoSelecionada) {
+        } else if (i == 1 && valorTela[parseInt(comprimento)-1] != operacaoSelecionada) {
             n2 += '.'
             tela.value += ','
         }
