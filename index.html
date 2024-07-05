@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>calculadora</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+  <body>
+    <!--Calculadora e histórico-->
+    <div class='calculadoraHistorico'>
+      <!--Corpo da calculadora-->
+      <div class='calculadora'>
+        <form>
+          <input type='text' autofocus class='tela' id='tela'>
+          </input>
+          <!--Botões-->
+          <section class='todosBotoes'>
+            <!--Resetar tudo-->
+            <button class='botoes'>AC</button>
+            <!--Apagar tudo da calculadora-->
+            <button class='botoes'>C</button>
+            <!--Apagar a ultima coisa inserida-->
+            <button class='botoes'><=</button>
+            <!--Efetuar Multiplicação-->
+            <button class='botoes'>*</button>
+            <!--Número 1-->
+            <button class='botoes'>1</button>
+            <!--Número 2-->
+            <button class='botoes'>2</button>
+            <!--Número 3-->
+            <button class='botoes'>3</button>
+            <!--Efeuar divisão-->
+            <button class='botoes'>/</button>
+            <!--Número 4-->
+            <button class='botoes'>4</button>
+            <!--Número 5-->
+            <button class='botoes'>5</button>
+            <!--Número 6-->
+            <button class='botoes'>6</button>
+            <!--Efeuar subtrção-->
+            <button class='botoes'>-</button>
+            <!--Número 7-->
+            <button class='botoes'>7</button>
+            <!--Número 8-->
+            <button class='botoes'>8</button>
+            <!--Número 9-->
+            <button class='botoes'>9</button>
+            <!--Efeuar adição-->
+            <button class='botoes'>+</button>
+            <!--Casa de milhar-->
+            <button class='botoes'>.</button>
+            <!--Número 0-->
+            <button class='botoes'>0</button>
+            <!--Casa decimal-->
+            <button class='botoes'>,</button>
+            <!--Efeuar operação-->
+            <button type='submit' class='botoes'>=</button>
+          </section>
+       </form>
+      </div>
+      <div>
+      <!--Histórico-->
+      <table class='historico' border='7'>
+        <thead><tr><th>HISTÓRICO</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      </div>
+    </div>
+    <script src='script.js'></script>
+
+
+  </body>
+</html>
