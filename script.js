@@ -81,17 +81,21 @@ botoes.addEventListener('click', function(e){
 
     //se o botao clicado for = então...    
     } else if (botaoClicado === '='){
-        console.log('o primeiro valor é', n1, ';', 'o segundo valor é', n2, ';')
-        //realizar a operação
-        parseInt(n1)
-        parseInt(n2);
-        calc = operacoes(n1, n2, operacaoSelecionada);
-        //escrever na tela
-        tela.value = parseFloat(calc).toFixed(1)
-        adicionarHistorico()
-        n1 = parseFloat(calc).toFixed(1)
-        n2 = ''
-        i = 0
+        if(botaoClicado === '=' && tela.value = calc){
+            tela.value = operacoes(calc,n2, operacaoSelecionada;)
+        } else {
+            console.log('o primeiro valor é', n1, ';', 'o segundo valor é', n2, ';')
+            //realizar a operação
+            parseInt(n1)
+            parseInt(n2);
+            calc = operacoes(n1, n2, operacaoSelecionada);
+            //escrever na tela
+            tela.value = parseFloat(calc).toFixed(1)
+            adicionarHistorico()
+            n1 = parseFloat(calc).toFixed(1)
+            n2 = ''
+            i = 0
+        }
 
     } else if (botaoClicado == '<='){
         valorTela = tela.value
@@ -197,17 +201,21 @@ tela.addEventListener('keydown', function(e){
 
     //se a tecla clicada for = então ou enter...    
     } else if (tecla === '=' || tecla === 'Enter'){
-        console.log('o primeiro valor é', n1, ';', 'o segundo valor é', n2, ';')
-        //realizar a operação
-        parseInt(n1)
-        parseInt(n2);
-        calc = operacoes(n1, n2, operacaoSelecionada);
-        //escrever na tela
-        tela.value = parseFloat(calc).toFixed(1)
-        adicionarHistorico()
-        n1 = parseFloat(calc).toFixed(1)
-        n2 = ''
-        i = 0
+        if(tecla === 'enter' && tela.value = calc){
+            tela.value = operacoes(calc,n2, operacaoSelecionada;)
+        } else {
+            console.log('o primeiro valor é', n1, ';', 'o segundo valor é', n2, ';')
+            //realizar a operação
+            parseInt(n1)
+            parseInt(n2);
+            calc = operacoes(n1, n2, operacaoSelecionada);
+            //escrever na tela
+            tela.value = parseFloat(calc).toFixed(2)
+            adicionarHistorico()
+            n1 = parseFloat(calc).toFixed(1)
+            n2 = ''
+            i = 0
+        }
 
     //se a tecla apagar for pressionada
     } else if (tecla == 'Backspace'){
