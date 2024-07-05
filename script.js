@@ -85,6 +85,7 @@ botoes.addEventListener('click', function(e){
     } else if (botaoClicado === '='){
         if(botaoClicado === '=' && tela.value == calc){
             tela.value = operacoes(calc,nhist, operacaoSelecionada)
+            
         } else {
             console.log('o primeiro valor é', n1, ';', 'o segundo valor é', n2, ';')
             //realizar a operação
