@@ -143,6 +143,7 @@ botoes.addEventListener('click', function(e){
         } else if (i == 0 && valorTela[parseInt(comprimento)-1] != operacaoSelecionada) {
             tela.value += '.'
         }
+    //se o botão de limpar tudo for clicado reinicia a página
     } else if (botaoClicado == 'AC' ){
         location.reload()
     }
@@ -159,15 +160,15 @@ botoes.addEventListener('click', function(e){
         n2 = ''
         i = 1
         operacaoSelecionada = operacaoSelecionadaDup
+        console.log('O resultado do cálculo é: ', calc';')
     }
     e.preventDefault();
 });
 
-//escutador de eventos quando o usuário clicar em alguma tecla
+//escutador de eventos quando o usuário utilizar o teclado
 document.addEventListener('keydown', function(e){
     tecla = e.key;
     console.log(tecla)
-
     //Se a tecla clicado for um número então...
     if (tecla >= 0 && tecla <= 9) {
         if(tela.value == calc){
@@ -186,22 +187,22 @@ document.addEventListener('keydown', function(e){
     
     //selecionando a operação
     } else if (tecla === '/' || tecla === '*' || tecla === '-' || tecla === '+'){
+        //caso a operação seja selecionada após inserir o segundo número
         if(i == 1){
             operacaoSelecionadaDup = tecla;
             i=2
-            
+        //caso o primeiro numero seja um número negativo
         } else if(i == 0 && tecla == '-' && n1 === ''){
             operacaoSelecionada = tecla
             n1= operacaoSelecionada
             tela.value += operacaoSelecionada
-
+        //caso tenha inserido apenas o primeiro número e está apenas selecionando a operação do primeiro cálculo
         }else{
             operacaoSelecionada = tecla;
             tela.value += operacaoSelecionada
             n2 = ''
             i++
         }
-
     //se a tecla clicada for = então ou enter...    
     } else if (tecla === '=' || tecla === 'Enter'){
         if(tecla === 'enter' && tela.value == calc){
@@ -218,6 +219,7 @@ document.addEventListener('keydown', function(e){
             n1 = parseFloat(calc).toFixed(1)
             nhist = n2
             i = 0
+            console.log('O resultado do cálculo é: ', calc';')
         }
 
     //se a tecla apagar for pressionada
@@ -284,27 +286,27 @@ document.addEventListener('keydown', function(e){
     e.preventDefault()
 });
 
+//Funções:
+//executar a operação:
 function operacoes(a,b,ope){
 
     switch (ope){
         //se operacao for dividir:
         case '/':
             return (parseFloat(a)/parseFloat(b));
-
         //se operacao for multiplicar:
         case '*':
             return (parseFloat(a)*parseFloat(b));
-
         //se operacao for subtração:
         case '-':
             return (parseFloat(a)-parseFloat(b));
-
         //se operação for adição:
         case '+':
             return (parseFloat(a)+parseFloat(b));
     }
 }
 
+//adicionar valor ao histórico de cálculo
 function adicionarHistorico () {
     //escrever mensagem
     mensagem = `${n1} ${operacaoSelecionada} ${n2}= ${parseFloat(calc).toFixed(2)}`
